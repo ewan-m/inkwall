@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
-import { View, Picker, CheckBox, AsyncStorage } from 'react-native';
+import { View, Picker } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 import { SparkText } from '../../../../atoms/SparkText';
-import { DrawCharacter } from '../create/DrawCharacter';
 import { SparkButton } from '../../../../atoms/SparkButton';
 import { SparkCard } from '../../../../atoms/SparkCard';
 import { colours } from '../../../../styles/ColourPalette';
@@ -32,7 +32,7 @@ export const Introduction: FunctionComponent<IntroductionProps> = ({
 			<SparkText style={{ marginBottom: 20 }}>
 				Inject personality into your online writing.
 			</SparkText>
-			<SparkCard style={{ padding: 10 }}>
+			<SparkCard>
 				<SparkText semiBold primary style={{ marginBottom: 5 }}>
 					Which alphabet?
 				</SparkText>
@@ -44,7 +44,10 @@ export const Introduction: FunctionComponent<IntroductionProps> = ({
 					}}
 				>
 					<Picker>
-						<Picker.Item label="Latin (abc...)" />
+						<Picker.Item label="Español" />
+						<Picker.Item label="ελληνικό" />
+						<Picker.Item label="русский" />
+						<Picker.Item label="English" />
 					</Picker>
 				</View>
 				<SparkText semiBold primary style={{ marginBottom: 5 }}>
@@ -71,7 +74,7 @@ export const Introduction: FunctionComponent<IntroductionProps> = ({
 				<TextInput
 					style={{ borderColor: colours.greyDark, borderBottomWidth: 1 }}
 				/>
-				<SparkText size="small" style={{ marginBottom: 30, marginTop: 5 }}>
+				<SparkText size="small" style={{ marginBottom: 20, marginTop: 5 }}>
 					Are you a fan of a good #hashtag?
 				</SparkText>
 			</SparkCard>

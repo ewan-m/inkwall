@@ -1,16 +1,15 @@
 import React, { FunctionComponent, useState } from 'react';
-import { View, AsyncStorage, Dimensions, TextInput } from 'react-native';
+import { View, TextInput } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 import { SparkText } from '../../../../atoms/SparkText';
 import { SparkButton } from '../../../../atoms/SparkButton';
 import { useStateValue } from '../../../../store/Store';
 import { SparkCard } from '../../../../atoms/SparkCard';
-import { LetterPath } from '../create/LetterPreview';
+import { LetterPath } from '../create/LetterPath';
 import { colours } from '../../../../styles/ColourPalette';
 
 export const Complete: FunctionComponent = () => {
 	const [{ rawFont }] = useStateValue();
-	const drawBoxWidth = (Dimensions.get('window').width - 100) / 2;
-	const drawBoxHeight = drawBoxWidth * 1.5;
 	const [testPhrase, setTestPhrase] = useState('');
 
 	const saveFont = async () => {
@@ -39,12 +38,7 @@ export const Complete: FunctionComponent = () => {
 			<SparkCard style={{ width: '100%', padding: 10 }}>
 				<View style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
 					{testPhrase.split('').map((letter, index) => (
-						<LetterPath
-							key={letter + index}
-							drawBoxHeight={drawBoxHeight}
-							drawBoxWidth={drawBoxHeight}
-							letter={letter}
-						/>
+						<LetterPath key={letter + index} letter={letter} />
 					))}
 				</View>
 			</SparkCard>

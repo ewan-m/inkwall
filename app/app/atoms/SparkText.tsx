@@ -31,7 +31,8 @@ export const SparkText: FunctionComponent<SparkTextProps> = (props) => (
 			{
 				textAlign: props.textAlign,
 				color: props?.primary ? colours.primaryText : colours.secondaryText,
-				fontWeight: props.semiBold ? '700' : '400',
+				fontFamily: 'adolfine',
+				fontWeight: '400',
 				fontSize: {
 					small: scaledFontSize(15),
 					normal: scaledFontSize(18),

@@ -20,5 +20,5 @@ export const SparkForm: FunctionComponent<TextInputProps> = (props) => (
 			},
 			props.style
 		)}
-	></TextInput>
+	/>
 );

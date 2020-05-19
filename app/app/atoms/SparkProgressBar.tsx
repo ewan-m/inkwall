@@ -36,8 +36,6 @@ export const SparkProgressBar: FunctionComponent<SparkProgressBarProps> = ({
 		<View
 			style={{
 				width: '100%',
-				borderBottomColor: colours.greyDark,
-				borderBottomWidth: 1,
 				paddingBottom: 10,
 				backgroundColor: 'white',
 			}}
@@ -52,10 +50,10 @@ export const SparkProgressBar: FunctionComponent<SparkProgressBarProps> = ({
 						overflow: 'hidden',
 					}}
 				>
-					<ImageBackground
-						source={require('../../assets/images/button-bg.jpg')}
+					<LinearGradient
+						colors={[colours.primaryDark, colours.primary]}
 						style={{ width: '100%', height: 20 }}
-					></ImageBackground>
+					/>
 				</Animated.View>
 			</View>
 			<View style={{ display: 'flex', flexDirection: 'row', paddingTop: 5 }}>
@@ -66,8 +64,7 @@ export const SparkProgressBar: FunctionComponent<SparkProgressBarProps> = ({
 						style={{
 							textAlign: 'center',
 							width: totalWidth / totalSteps,
-							color:
-								index < currentStep ? colours.primaryLight : colours.secondaryText,
+							color: index < currentStep ? colours.primaryDark : colours.secondaryText,
 						}}
 					>
 						{index + 1 + ') '}

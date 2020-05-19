@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
-import { Animated, Easing, ViewProps } from 'react-native';
+import { Animated, Easing, ViewProps, Dimensions } from 'react-native';
 import { colours } from '../styles/ColourPalette';
 
 export const SparkPageContainer: FunctionComponent<ViewProps> = ({
@@ -21,9 +21,8 @@ export const SparkPageContainer: FunctionComponent<ViewProps> = ({
 				{},
 				{
 					alignItems: 'center',
-					backgroundColor: colours.greyLight,
-					justifyContent: 'space-evenly',
-					height: '100%',
+					backgroundColor: '#fff',
+					minHeight: Dimensions.get('window').height - 80,
 					width: '100%',
 					transform: [
 						{

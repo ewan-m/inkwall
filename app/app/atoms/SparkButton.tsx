@@ -5,6 +5,7 @@ import {
 	StyleProp,
 	ViewStyle,
 	ImageBackground,
+	View,
 } from 'react-native';
 import { colours } from '../styles/ColourPalette';
 import { SparkText } from './SparkText';
@@ -18,7 +19,7 @@ export interface SparkButtonProps extends TouchableOpacityProps {
 
 export const SparkButton: FunctionComponent<SparkButtonProps> = ({
 	size = 'normal',
-	type,
+	type = 'primary',
 	innerStyle,
 	...props
 }) => (
@@ -34,19 +35,17 @@ export const SparkButton: FunctionComponent<SparkButtonProps> = ({
 			props.style
 		)}
 	>
-		<ImageBackground
-			source={
-				type === 'secondary'
-					? require('../../assets/images/button-bg-2.jpg')
-					: require('../../assets/images/button-bg.jpg')
-			}
+		<View
 			style={Object.assign(
 				{},
 				{
 					paddingVertical: { big: 20, normal: 15, small: 10 }[size],
 					paddingHorizontal: { big: 40, normal: 30, small: 20 }[size],
-					borderRadius: 40,
+					width: '100%',
+					alignItems: 'center',
 					overflow: 'hidden',
+					backgroundColor:
+						type === 'secondary' ? colours.grey : colours.primaryLight,
 				},
 				innerStyle
 			)}
@@ -54,10 +53,10 @@ export const SparkButton: FunctionComponent<SparkButtonProps> = ({
 			<SparkText
 				semiBold
 				size={size === 'small' ? 'normal' : size}
-				style={{ color: type === 'secondary' ? colours.primary : '#fff' }}
+				style={{ color: type === 'secondary' ? colours.primaryDark : 'black' }}
 			>
 				{props.children}
 			</SparkText>
-		</ImageBackground>
+		</View>
 	</TouchableOpacity>
 );

@@ -25,9 +25,6 @@ export const SparkBlast: FunctionComponent<SparkBlastProps> = ({
 			style={{
 				backgroundColor: '#fff',
 				marginVertical: 10,
-				elevation: 2,
-				shadowColor: colours.greyDark,
-				shadowOpacity: 0.1,
 			}}
 		>
 			<View
@@ -77,8 +74,6 @@ export const SparkBlast: FunctionComponent<SparkBlastProps> = ({
 					paddingHorizontal: 15,
 					paddingTop: 7.5,
 					paddingBottom: 10,
-					borderTopColor: colours.greyLight,
-					borderTopWidth: 1,
 					flexDirection: 'row',
 					alignItems: 'center',
 				}}

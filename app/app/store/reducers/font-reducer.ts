@@ -1,6 +1,5 @@
 import { Font } from '../../pages/main/font-creation/create/Create';
 import { State } from '../Store';
-import { AsyncStorage } from 'react-native';
 
 export interface UpdateFontAction {
 	type: 'UPDATE_LETTER' | 'DELETE_LETTER' | 'UPDATE_FONT';
@@ -19,7 +18,6 @@ export function updateFont(
 ): State {
 	switch (action.type) {
 		case 'UPDATE_FONT':
-			console.log(state);
 			if (action.payload.rawFont) {
 				return { ...state, rawFont: action.payload.rawFont };
 			}

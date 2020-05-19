@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconUser, IconMap, IconHome, IconEdit } from '../../atoms/Icons';
+import { IconHome, IconEdit, IconPlus } from '../../atoms/Icons';
 import { SparkText } from '../../atoms/SparkText';
 import { Home } from './home/Home';
 import { FontCreation } from './font-creation/FontCreation';
@@ -11,18 +11,13 @@ export const navigationItems: Array<any> = [
 		page: <Home />,
 	},
 	{
-		label: 'Map',
-		Icon: IconMap,
-		page: <SparkText>MEssaging?</SparkText>,
+		label: 'Saved',
+		Icon: IconPlus,
+		page: <SparkText>Profile</SparkText>,
 	},
 	{
 		label: 'Font',
 		Icon: IconEdit,
 		page: <FontCreation />,
-	},
-	{
-		label: 'Profile',
-		Icon: IconUser,
-		page: <SparkText>Profile</SparkText>,
 	},
 ];

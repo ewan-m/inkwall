@@ -7,6 +7,7 @@ interface SparkOptionsProps extends ViewProps {
 	setSelected: (newSelected: Array<string>) => void;
 	selected: Array<string>;
 	allowMultipleSelected?: boolean;
+	buttonSize?: 'big' | 'normal' | 'small';
 }
 
 export const SparkOptions: FunctionComponent<SparkOptionsProps> = ({
@@ -14,6 +15,7 @@ export const SparkOptions: FunctionComponent<SparkOptionsProps> = ({
 	selected,
 	allowMultipleSelected,
 	setSelected,
+	buttonSize = 'small',
 	style,
 }) => {
 	const selectItem = (item: string) => {
@@ -41,7 +43,7 @@ export const SparkOptions: FunctionComponent<SparkOptionsProps> = ({
 				<SparkButton
 					onPress={() => selectItem(text)}
 					type={selected.includes(text) ? 'primary' : 'secondary'}
-					size="small"
+					size={buttonSize}
 					key={text}
 					style={{ marginRight: 5 }}
 				>

@@ -14,5 +14,5 @@ module.exports = {
 			},
 		}),
 	},
-	resetCache: true
+	resetCache: true,
 };

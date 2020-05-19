@@ -1,13 +1,13 @@
 import { useEffect, useRef } from 'react';
 
-const noop = () => {};
+const stubFunction = () => {};
 
 export function useInterval(
 	callback: () => void,
 	delay: number | null | false,
 	immediate?: boolean
 ) {
-	const savedCallback = useRef(noop);
+	const savedCallback = useRef(stubFunction);
 
 	useEffect(() => {
 		savedCallback.current = callback;

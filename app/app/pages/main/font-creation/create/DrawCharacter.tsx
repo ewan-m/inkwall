@@ -1,7 +1,4 @@
-import React, {
-	FunctionComponent,
-	useState,
-} from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { View, GestureResponderEvent } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import { colours } from '../../../../styles/ColourPalette';
@@ -9,19 +6,19 @@ import moment from 'moment';
 import { SparkButton } from '../../../../atoms/SparkButton';
 import { useStateValue } from '../../../../store/Store';
 import { SparkText } from '../../../../atoms/SparkText';
+import { getBoxDimensions } from '../../../../font-processor/get-box-dimensions';
 
 interface DrawCharacterProps {
 	character: string;
-	size: [number, number];
 }
 
 export const DrawCharacter: FunctionComponent<DrawCharacterProps> = ({
 	character,
-	size,
 }) => {
 	const [lastDraw, setLastDraw] = useState(new Date() as Date);
 	const [validStart, setValidStart] = useState(true);
 	const [{ rawFont }, dispatch] = useStateValue();
+	const size = getBoxDimensions();
 
 	const updateSvgPath = (event: GestureResponderEvent) => {
 		if (!validStart) {

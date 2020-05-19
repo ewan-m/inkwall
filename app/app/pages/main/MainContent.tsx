@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
-import { StatusBar, SafeAreaView, ScrollView } from 'react-native';
+import { StatusBar, ScrollView, SafeAreaView } from 'react-native';
 import { NavigationFooter } from './NavigationFooter';
 import { navigationItems } from './NavigationItems';
 import { NavigationNavigatorProps } from 'react-navigation';
@@ -16,7 +16,7 @@ export const MainContent: FunctionComponent<NavigationNavigatorProps> = () => {
 					selectedNavIndex={currentNavIndex}
 					setSelectedNavIndex={setCurrentNavIndex}
 					navigationItems={navigationItems}
-				></NavigationFooter>
+				/>
 			</SafeAreaView>
 		</>
 	);

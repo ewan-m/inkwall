@@ -20,11 +20,14 @@ export const NavigationFooter: FunctionComponent<NavigationFooterProps> = ({
 				height: 55,
 				justifyContent: 'space-between',
 				borderTopWidth: 1,
-				borderTopColor: colours.greyLight,
-				backgroundColor: '#fff',
+				borderTopColor: colours.grey,
+				backgroundColor: 'white',
+				elevation: 10,
+				shadowColor: 'black',
+				shadowOpacity: 1,
 			}}
 		>
-			{navigationItems.map(({ Icon, label }, index) => (
+			{navigationItems.map(({ Icon }, index) => (
 				<TouchableOpacity
 					style={{
 						flex: 1,
@@ -42,9 +45,7 @@ export const NavigationFooter: FunctionComponent<NavigationFooterProps> = ({
 						}}
 					>
 						<Icon
-							fill={
-								index === selectedNavIndex ? colours.primary : colours.secondaryText
-							}
+							fill={index === selectedNavIndex ? colours.primary : colours.greyDark}
 						/>
 					</View>
 				</TouchableOpacity>

@@ -13,6 +13,7 @@ export const LettersProgress: FunctionComponent<LettersProgressProps> = ({
 	const [completed, setCompleted] = useState(['a']);
 	return (
 		<SparkOptions
+			buttonSize="big"
 			selected={completed}
 			setSelected={(newLetters) => {
 				setCompleted(newLetters);
